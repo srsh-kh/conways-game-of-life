@@ -1,4 +1,5 @@
 #include <raylib.h>
+#include "grid.hpp"
 
 int main()
 {
@@ -10,12 +11,16 @@ int main()
 
     InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Game of Life");
     SetTargetFPS(FPS);
+    Grid grid(WINDOW_WIDTH, WINDOW_HEIGHT, CELL_SIZE);
+    grid.SetValue(0, 0, 1);
+    grid.SetValue(2, 1, 1);
 
     while (WindowShouldClose() == false)
     {
 
         BeginDrawing();
         ClearBackground(GREY);
+        grid.Draw();
         EndDrawing();
     }
 
