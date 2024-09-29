@@ -10,6 +10,9 @@ class Grid
         void SetValue(int row, int column, int value);
         int GetValue(int row, int column);
         bool IsWithinBounds(int row, int column);
+        int GetRows() {return rows;}
+        int GetColumns() {return columns;}
+        void FillRandom();
     private:
         int rows;
         int columns;
